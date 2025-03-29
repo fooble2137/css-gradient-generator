@@ -23,6 +23,7 @@ const generateGradient = (isRandom) => {
 
   textarea.value = `background: ${gradient};`;
 };
+generateGradient(true);
 
 const copyCode = () => {
   navigator.clipboard.writeText(textarea.value);
