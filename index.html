@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="content-Type" content="text/html; utf-8" />
+    <meta http-equiv="Pragma" content="cache" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta http-equiv="content-Language" content="en" />
+    <meta
+      name="description"
+      content="A simple CSS Gradient Generator made in HTML, CSS and JavaScript."
+    />
+    <meta name="keywords" content="Fooble, CSS, Gradient, Gradient Generator" />
+    <meta name="author" content="Fooble" />
+    <meta name="revisit-after" content="2 days" />
+
+    <link rel="stylesheet" href="font/font.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="logo.png" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <script src="script.js" defer></script>
+
+    <title>CSS Gradient Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Gradient Generator</h1>
+
+      <div class="wrapper">
+        <div class="gradient-box"></div>
+        <div class="row options">
+          <div class="column direction">
+            <p>Direction</p>
+
+            <div class="select-box">
+              <select>
+                <option value="to top" selected>Top</option>
+                <option value="to right top">Right Top</option>
+                <option value="to right">Right</option>
+                <option value="to right bottom">Right Bottom</option>
+                <option value="to bottom">Bottom</option>
+                <option value="to left bottom">Left Bottom</option>
+                <option value="to left">Left</option>
+                <option value="to left top">Left Top</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="column colors">
+            <p>Colors</p>
+
+            <div class="inputs">
+              <input type="color" value="#8E3DFF" />
+              <input type="color" value="#5A00D8" />
+            </div>
+          </div>
+        </div>
+
+        <textarea class="row" disabled></textarea>
+
+        <div class="row buttons">
+          <button class="refresh">Refresh Colors</button>
+          <button class="copy">Copy Code</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
