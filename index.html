@@ -45,7 +45,7 @@
         <div class="gradient-box"></div>
         <div class="row options">
           <div class="column direction">
-            <p>Direction</p>
+            <p class="title">Direction</p>
 
             <div class="select-box">
               <select>
@@ -62,11 +62,30 @@
           </div>
 
           <div class="column colors">
-            <p>Colors</p>
+            <div class="colors-header">
+              <p class="title">Colors</p>
+              <button type="button" class="add-color" title="Add color">
+                Add
+              </button>
+            </div>
 
-            <div class="inputs">
-              <input type="color" />
-              <input type="color" />
+            <div class="color-inputs">
+              <div class="color-input-group">
+                <input type="color" value="#8e3dff" />
+                <input type="range" min="0" max="100" value="0" class="position-slider" />
+                <span class="position-value">0%</span>
+                <button type="button" class="remove-color" title="Remove color" disabled>
+                  <i class="ri-close-line"></i>
+                </button>
+              </div>
+              <div class="color-input-group">
+                <input type="color" value="#5a00d8" />
+                <input type="range" min="0" max="100" value="100" class="position-slider" />
+                <span class="position-value">100%</span>
+                <button type="button" class="remove-color" title="Remove color" disabled>
+                  <i class="ri-close-line"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -74,8 +93,12 @@
         <textarea class="row" disabled></textarea>
 
         <div class="row buttons">
-          <button class="refresh">Refresh Colors</button>
-          <button class="copy">Copy Code</button>
+          <button class="refresh">
+            <i class="ri-refresh-line"></i> Random
+          </button>
+          <button class="copy">
+            <i class="ri-file-copy-line"></i> Copy Code
+          </button>
         </div>
       </div>
     </div>
