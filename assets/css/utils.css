@@ -170,6 +170,35 @@ main {
   cursor: not-allowed;
 }
 
+/* Info */
+.info {
+  border: 1px solid #bedbff;
+  border-radius: 6px;
+  background-color: #eff6ff;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+}
+
+.info .title {
+  font-weight: 500;
+}
+
+.info p:not(.title) {
+  margin-top: 5px;
+  color: #333;
+}
+
+.info ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.info ul li {
+  margin-bottom: 3px;
+  color: #333;
+  list-style-type: circle;
+}
+
 /* Nav */
 nav {
   display: flex;
