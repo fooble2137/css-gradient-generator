@@ -26,7 +26,7 @@
 }
 
 .color-stop input[type="range"] {
-  flex-grow: 1;
+  width: 100%;
 }
 
 .color-stop span {
@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 475px) {
   main {
     padding: 0 !important;
   }
