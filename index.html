@@ -10,24 +10,26 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="apple-mobile-web-app-title" content="Fooble Gradient Generator" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Fooble Gradient Generator"
+    />
     <meta name="author" content="Fooble" />
     <meta http-equiv="content-language" content="en" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="revisit-after" content="2 days" />
 
-    <link href="font/font.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="assets/css/fonts.css" rel="stylesheet" />
+    <link href="assets/css/reset.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/utils.css" rel="stylesheet" />
 
-    <link href="favicon.ico" rel="shortcut icon" />
-    <link href="apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="assets/images/favicon.ico" rel="shortcut icon" />
 
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-
-    <script src="script.js" defer></script>
 
     <meta name="keywords" content="Fooble, CSS Gradient, Gradient Generator" />
     <meta
@@ -38,69 +40,158 @@
     <title>CSS Gradient Generator</title>
   </head>
   <body>
-    <div class="container">
-      <h1>CSS Gradient Generator</h1>
+    <div id="mobile-nav-overlay"></div>
 
-      <div class="wrapper">
-        <div class="gradient-box"></div>
-        <div class="row options">
-          <div class="column direction">
-            <p class="title">Direction</p>
+    <nav>
+      <div class="items">
+        <a href="/qr"><i class="ri-qr-code-line"></i> QR Code</a>
+        <a class="soon" href="#"><i class="ri-barcode-line"></i> Barcode</a>
+        <a class="selected" href="/gradient"
+          ><i class="ri-palette-line"></i> CSS Gradient</a
+        >
+        <a href="/password"><i class="ri-key-2-line"></i> Password</a>
+        <a class="soon" href="#"><i class="ri-time-line"></i> Timezone</a>
+        <a class="soon" href="#"><i class="ri-hashtag"></i> Roman</a>
+      </div>
 
-            <div class="select-box">
-              <select>
-                <option value="to top" selected>Top</option>
-                <option value="to right top">Right Top</option>
-                <option value="to right">Right</option>
-                <option value="to right bottom">Right Bottom</option>
-                <option value="to bottom">Bottom</option>
-                <option value="to left bottom">Left Bottom</option>
-                <option value="to left">Left</option>
-                <option value="to left top">Left Top</option>
+      <p class="mobile-text">Fooble Tools</p>
+      <button class="mobile-nav-toggle">
+        <i class="ri-gallery-view-2"></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="card">
+        <h1>CSS Gradient Generator</h1>
+
+        <div class="gradient-generator form">
+          <div class="input-box">
+            <label for="direction">Gradient Direction</label>
+            <select id="direction">
+              <option value="to right">Left to Right</option>
+              <option value="to left">Right to Left</option>
+              <option value="to bottom">Top to Bottom</option>
+              <option value="to top">Bottom to Top</option>
+              <option value="to bottom right">Top Left to Bottom Right</option>
+              <option value="to bottom left">Top Right to Bottom Left</option>
+              <option value="to top right">Bottom Left to Top Right</option>
+              <option value="to top left">Bottom Right to Top Left</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <div class="top">
+              <label for="color-stops">Color Stops</label>
+              <button
+                class="btn-outline"
+                id="add-color-stop"
+                title="Add Color Stop"
+              >
+                <i class="ri-add-line"></i>
+              </button>
+            </div>
+
+            <div class="color-stops" id="color-stops">
+              <div class="color-stop">
+                <input
+                  id="color-1"
+                  type="text"
+                  value="#000000"
+                  placeholder="#000000"
+                  maxlength="7"
+                />
+
+                <input
+                  id="color-range-1"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+                <span id="color-range-text-1">0%</span>
+
+                <button
+                  class="btn-outline"
+                  id="remove-color-1"
+                  title="Remove Color"
+                >
+                  <i class="ri-delete-bin-5-line"></i>
+                </button>
+              </div>
+
+              <div class="color-stop">
+                <input
+                  id="color-1"
+                  type="text"
+                  value="#000000"
+                  placeholder="#000000"
+                  maxlength="7"
+                />
+
+                <input
+                  id="color-range-1"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+                <span id="color-range-text-1">0%</span>
+
+                <button
+                  class="btn-outline"
+                  id="remove-color-1"
+                  title="Remove Color"
+                >
+                  <i class="ri-delete-bin-5-line"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label for="preview">Preview</label>
+
+            <div id="preview"></div>
+          </div>
+
+          <div class="form horizontal">
+            <div class="input-box" style="width: 100%">
+              <label for="copy-format">Copy Format</label>
+              <select id="copy-format">
+                <option value="css">CSS</option>
+                <option value="tailwind">Tailwind</option>
+              </select>
+            </div>
+
+            <div class="input-box" style="width: 100%">
+              <label for="color-format">Color Format</label>
+              <select id="color-format">
+                <option value="hex">HEX</option>
+                <option value="rgb">RGB</option>
+                <option value="hsl">HSL</option>
               </select>
             </div>
           </div>
 
-          <div class="column colors">
-            <div class="colors-header">
-              <p class="title">Colors</p>
-              <button type="button" class="add-color" title="Add color">
-                Add
-              </button>
-            </div>
+          <div class="input-box">
+            <label for="code">Generated Code</label>
+            <input id="code" type="text" readonly />
+          </div>
 
-            <div class="color-inputs">
-              <div class="color-input-group">
-                <input type="color" value="#8e3dff" />
-                <input type="range" min="0" max="100" value="0" class="position-slider" />
-                <span class="position-value">0%</span>
-                <button type="button" class="remove-color" title="Remove color" disabled>
-                  <i class="ri-close-line"></i>
-                </button>
-              </div>
-              <div class="color-input-group">
-                <input type="color" value="#5a00d8" />
-                <input type="range" min="0" max="100" value="100" class="position-slider" />
-                <span class="position-value">100%</span>
-                <button type="button" class="remove-color" title="Remove color" disabled>
-                  <i class="ri-close-line"></i>
-                </button>
-              </div>
-            </div>
+          <div class="btns">
+            <button class="btn" id="random-btn">
+              <i class="ri-shuffle-line"></i> Randomize
+            </button>
+            <button class="btn" id="copy-btn">
+              <i class="ri-file-copy-line"></i> Copy
+            </button>
           </div>
         </div>
-
-        <textarea class="row" disabled></textarea>
-
-        <div class="row buttons">
-          <button class="refresh">
-            <i class="ri-refresh-line"></i> Random
-          </button>
-          <button class="copy">
-            <i class="ri-file-copy-line"></i> Copy Code
-          </button>
-        </div>
       </div>
-    </div>
+    </main>
+
+    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/nav.js"></script>
   </body>
 </html>
